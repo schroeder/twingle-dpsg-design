@@ -1,0 +1,415 @@
+/* ==========================================================================
+   DPSG Corporate Design – Twingle Donation Page Custom CSS
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. @font-face – Self-hosted Arvo Bold
+   -------------------------------------------------------------------------- */
+
+@font-face {
+  font-family: "Arvo";
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src: url('fonts/Arvo-Bold.woff2') format('woff2'),
+       url('fonts/Arvo-Bold.woff') format('woff');
+}
+
+/* --------------------------------------------------------------------------
+   2. CSS Custom Properties
+   -------------------------------------------------------------------------- */
+
+:root {
+  --dpsg-blue: #003056;
+  --dpsg-red: #810a1a;
+  --dpsg-red-dark: #5a0712;
+  --dpsg-hellbeige: #ecdfcb;
+  --dpsg-mittelbeige: #c7bdad;
+  --dpsg-border-accessible: #887b6b;
+  --dpsg-white: #ffffff;
+  --dpsg-transition: 150ms ease;
+}
+
+/* --------------------------------------------------------------------------
+   3. Base/Reset Styles
+   -------------------------------------------------------------------------- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--dpsg-hellbeige, #ecdfcb);
+  color: var(--dpsg-blue, #003056);
+  font-family: "Calibri", "Myriad Pro", Arial, sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   4. Typography
+   -------------------------------------------------------------------------- */
+
+body h1,
+body h2 {
+  font-family: "Arvo", Georgia, "Times New Roman", serif;
+  font-weight: 700;
+  color: var(--dpsg-blue, #003056);
+}
+
+body h1 {
+  font-size: 1.5rem;
+}
+
+body h2 {
+  font-size: 1.25rem;
+}
+
+body p,
+body label,
+body input,
+body button,
+body select,
+body textarea {
+  font-family: "Calibri", "Myriad Pro", Arial, sans-serif;
+}
+
+/* --------------------------------------------------------------------------
+   5. Layout
+   -------------------------------------------------------------------------- */
+
+body {
+  overflow-x: hidden;
+}
+
+body .tw-form,
+body .tw-widget,
+body main {
+  width: 100%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+body .tw-form .tw-form-group,
+body .tw-form fieldset,
+body .tw-form .tw-amount,
+body .tw-form .tw-payment,
+body .tw-form .tw-rhythm,
+body form > div {
+  margin-bottom: 1rem;
+}
+
+/* --------------------------------------------------------------------------
+   6. Brand Identity
+   -------------------------------------------------------------------------- */
+
+/* 8.1 – Top border on content container */
+body .tw-widget,
+body .tw-form,
+body main {
+  border-top: 4px solid var(--dpsg-red, #810a1a);
+}
+
+/* 8.2 – Header/logo area: DPSG Blue background, white foreground (13.49:1 contrast) */
+body .tw-header,
+body header {
+  background-color: var(--dpsg-blue, #003056);
+  color: var(--dpsg-white, #ffffff);
+}
+
+body .tw-header a,
+body .tw-header span,
+body .tw-header img,
+body header a,
+body header span {
+  color: var(--dpsg-white, #ffffff);
+}
+
+/* 8.3 – Footer area: 2px solid DPSG Red bottom border */
+body .tw-footer,
+body footer {
+  border-bottom: 2px solid var(--dpsg-red, #810a1a);
+}
+
+/* 8.4 – Card/grouped content sections: Hellbeige background */
+body .tw-form .tw-form-group,
+body .tw-form fieldset,
+body .tw-form .tw-card,
+body .tw-form .tw-panel,
+body .tw-widget .tw-form-group,
+body form .tw-form-group {
+  background-color: var(--dpsg-hellbeige, #ecdfcb);
+}
+
+/* 8.5 – SSL notice area: Mittelbeige background (DPSG Blue text = 7.26:1 contrast) */
+body .tw-ssl,
+body .tw-secure,
+body .tw-security-notice {
+  background-color: var(--dpsg-mittelbeige, #c7bdad);
+  color: var(--dpsg-blue, #003056);
+}
+
+/* --------------------------------------------------------------------------
+   7. Form Elements – Inputs
+   -------------------------------------------------------------------------- */
+
+/* 5.1, 5.2 – Text inputs, selects, textareas: border, padding, border-radius */
+body .tw-form input[type="text"],
+body .tw-form input[type="email"],
+body .tw-form input[type="number"],
+body .tw-form input[type="tel"],
+body .tw-form input[type="url"],
+body .tw-form input[type="password"],
+body .tw-form select,
+body .tw-form textarea,
+body form input[type="text"],
+body form input[type="email"],
+body form input[type="number"],
+body form input[type="tel"],
+body form input[type="url"],
+body form input[type="password"],
+body form select,
+body form textarea {
+  border: 1px solid var(--dpsg-border-accessible, #887b6b);
+  padding: 0.5rem;
+  border-radius: 4px;
+  transition: border-color var(--dpsg-transition, 150ms ease);
+}
+
+/* 4.4, 5.8 – Minimum 44px touch target on all interactive elements */
+body .tw-form input[type="text"],
+body .tw-form input[type="email"],
+body .tw-form input[type="number"],
+body .tw-form input[type="tel"],
+body .tw-form input[type="url"],
+body .tw-form input[type="password"],
+body .tw-form select,
+body .tw-form textarea,
+body .tw-form button,
+body .tw-form input[type="submit"],
+body .tw-form input[type="radio"],
+body .tw-form input[type="checkbox"],
+body form input[type="text"],
+body form input[type="email"],
+body form input[type="number"],
+body form input[type="tel"],
+body form input[type="url"],
+body form input[type="password"],
+body form select,
+body form textarea,
+body form button,
+body form input[type="submit"],
+body form input[type="radio"],
+body form input[type="checkbox"] {
+  min-height: 44px;
+}
+
+/* 5.4 – Donation amount input: larger font-size for prominence */
+body .tw-form .tw-amount input,
+body .tw-form input.tw-amount-input,
+body .tw-form input[name*="amount"],
+body form .tw-amount input,
+body form input[name*="amount"] {
+  font-size: 1.25rem;
+}
+
+/* --------------------------------------------------------------------------
+   7b. Form Elements – Buttons & Controls
+   -------------------------------------------------------------------------- */
+
+/* 5.5, 5.6 – Submit/action button: DPSG Red background, white text, bold */
+body .tw-form button[type="submit"],
+body .tw-form input[type="submit"],
+body .tw-form .tw-submit,
+body .tw-form .tw-btn-primary,
+body form button[type="submit"],
+body form input[type="submit"] {
+  background-color: var(--dpsg-red, #810a1a);
+  color: var(--dpsg-white, #ffffff);
+  font-weight: 700;
+  border: none;
+  border-radius: 4px;
+  padding: 0.75rem 1.5rem;
+  cursor: pointer;
+  min-height: 44px;
+  transition: background-color var(--dpsg-transition, 150ms ease);
+}
+
+/* 5.7, 5.8 – Button hover state: darkened DPSG Red */
+body .tw-form button[type="submit"]:hover,
+body .tw-form input[type="submit"]:hover,
+body .tw-form .tw-submit:hover,
+body .tw-form .tw-btn-primary:hover,
+body form button[type="submit"]:hover,
+body form input[type="submit"]:hover {
+  background-color: var(--dpsg-red-dark, #5a0712);
+}
+
+/* 5.5 – Radio buttons and checkboxes: DPSG Blue accent */
+body .tw-form input[type="radio"],
+body .tw-form input[type="checkbox"],
+body form input[type="radio"],
+body form input[type="checkbox"] {
+  accent-color: var(--dpsg-blue, #003056);
+  min-height: 44px;
+  min-width: 44px;
+}
+
+/* --------------------------------------------------------------------------
+   7c. Form Elements – Focus States
+   -------------------------------------------------------------------------- */
+
+/* 1.6, 5.3, 6.3 – Focus indicator: 2px solid DPSG Blue outline, 2px offset
+   Uses :focus-visible for keyboard-only focus indication.
+   Border is preserved (outline only) to prevent layout shift.
+   Focus outline contrast against Hellbeige: 10.26:1 (exceeds 3:1 requirement). */
+body .tw-form input[type="text"]:focus-visible,
+body .tw-form input[type="email"]:focus-visible,
+body .tw-form input[type="number"]:focus-visible,
+body .tw-form input[type="tel"]:focus-visible,
+body .tw-form input[type="url"]:focus-visible,
+body .tw-form input[type="password"]:focus-visible,
+body .tw-form select:focus-visible,
+body .tw-form textarea:focus-visible,
+body .tw-form button:focus-visible,
+body .tw-form input[type="submit"]:focus-visible,
+body .tw-form input[type="radio"]:focus-visible,
+body .tw-form input[type="checkbox"]:focus-visible,
+body form input[type="text"]:focus-visible,
+body form input[type="email"]:focus-visible,
+body form input[type="number"]:focus-visible,
+body form input[type="tel"]:focus-visible,
+body form input[type="url"]:focus-visible,
+body form input[type="password"]:focus-visible,
+body form select:focus-visible,
+body form textarea:focus-visible,
+body form button:focus-visible,
+body form input[type="submit"]:focus-visible,
+body form input[type="radio"]:focus-visible,
+body form input[type="checkbox"]:focus-visible {
+  outline: 2px solid var(--dpsg-blue, #003056);
+  outline-offset: 2px;
+}
+
+/* --------------------------------------------------------------------------
+   8. Links & Interactive States
+   -------------------------------------------------------------------------- */
+
+/* 1.7 – Link default and visited states: DPSG Red (8.03:1 contrast on Hellbeige) */
+body a,
+body .tw-form a,
+body .tw-widget a,
+body a:visited,
+body .tw-form a:visited,
+body .tw-widget a:visited {
+  color: var(--dpsg-red, #810a1a);
+  transition: color var(--dpsg-transition, 150ms ease);
+}
+
+/* 1.8 – Link hover state: DPSG Blue (10.26:1 contrast on Hellbeige) */
+body a:hover,
+body .tw-form a:hover,
+body .tw-widget a:hover {
+  color: var(--dpsg-blue, #003056);
+}
+
+/* --------------------------------------------------------------------------
+   9. Responsive Overrides – Desktop
+   -------------------------------------------------------------------------- */
+
+@media (min-width: 768px) {
+
+  /* 2.4 – Base font-size: 16px on desktop */
+  body {
+    font-size: 16px;
+  }
+
+  /* 3.1, 3.2 – Content area: max-width 720px, centered, 2rem padding all sides */
+  body .tw-form,
+  body .tw-widget,
+  body main {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+
+  /* 3.3 – Form groups: at least 1.5rem vertical margin between groups */
+  body .tw-form .tw-form-group,
+  body .tw-form fieldset,
+  body .tw-form .tw-amount,
+  body .tw-form .tw-payment,
+  body .tw-form .tw-rhythm,
+  body form > div {
+    margin-bottom: 1.5rem;
+  }
+
+  /* 3.5 – At least 2rem spacing between content top and first form element */
+  body .tw-form .tw-form-group:first-child,
+  body .tw-form fieldset:first-child,
+  body .tw-form .tw-amount:first-child,
+  body .tw-form .tw-payment:first-child,
+  body .tw-form .tw-rhythm:first-child,
+  body form > div:first-child {
+    margin-top: 2rem;
+  }
+
+  /* 3.5 – Button width reset: auto width on desktop (overrides mobile full-width) */
+  body .tw-form button[type="submit"],
+  body .tw-form input[type="submit"],
+  body .tw-form .tw-submit,
+  body .tw-form .tw-btn-primary,
+  body form button[type="submit"],
+  body form input[type="submit"] {
+    width: auto;
+  }
+
+}
+
+/* --------------------------------------------------------------------------
+   9b. Responsive – Mobile-Specific (base styles overridden by desktop @media)
+   -------------------------------------------------------------------------- */
+
+/* 4.3 – Buttons full-width on mobile (reset to auto in section 9 desktop override) */
+body .tw-form button[type="submit"],
+body .tw-form input[type="submit"],
+body .tw-form .tw-submit,
+body .tw-form .tw-btn-primary,
+body form button[type="submit"],
+body form input[type="submit"] {
+  width: 100%;
+}
+
+/* 4.6 – Constrain images and embedded media to container width */
+body .tw-form img,
+body .tw-form video,
+body .tw-form iframe,
+body .tw-form embed,
+body .tw-widget img,
+body .tw-widget video,
+body .tw-widget iframe,
+body .tw-widget embed,
+body main img,
+body main video,
+body main iframe,
+body main embed {
+  max-width: 100%;
+  height: auto;
+}
+
+/* --------------------------------------------------------------------------
+   10. Accessibility
+   -------------------------------------------------------------------------- */
+
+/* 6.7 – Reduced motion: disable all transitions and animations for users
+   who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition: none;
+    animation: none;
+  }
+}
